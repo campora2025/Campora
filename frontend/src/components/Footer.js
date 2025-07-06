@@ -1,6 +1,5 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaInstagram, FaGithub, FaYoutube } from "react-icons/fa";
+import { Col, Container, Row } from "react-bootstrap";
+import { FaGithub, FaInstagram } from "react-icons/fa";
 
 // Style konsisten dengan CategProd.js
 const CYBER = {
@@ -50,9 +49,9 @@ export default function Footer() {
                 letterSpacing: 1.2,
               }}
             >
-              <span style={{ fontWeight: 900, fontSize: 26, color: CYBER.neon }}>MP</span>
+              <span style={{ fontWeight: 900, fontSize: 26, color: CYBER.neon }}>🏕️</span>
               <span style={{ color: CYBER.text, fontWeight: FONT.bodyWeight, fontSize: 18 }}>
-                MarketPlace
+                Campora
               </span>
             </div>
           </Col>
@@ -71,6 +70,10 @@ export default function Footer() {
                 onMouseOver={e => e.currentTarget.style.color = CYBER.accent}
                 onMouseOut={e => e.currentTarget.style.color = CYBER.textDim}
               >Tentang</a>
+              <a href="/faq" style={{ color: CYBER.textDim, textDecoration: "none", fontWeight: FONT.headerWeight, transition: "color 0.2s" }}
+                onMouseOver={e => e.currentTarget.style.color = CYBER.accent}
+                onMouseOut={e => e.currentTarget.style.color = CYBER.textDim}
+              >FAQ</a>
               <a href="/kontak" style={{ color: CYBER.textDim, textDecoration: "none", fontWeight: FONT.headerWeight, transition: "color 0.2s" }}
                 onMouseOver={e => e.currentTarget.style.color = CYBER.accent}
                 onMouseOut={e => e.currentTarget.style.color = CYBER.textDim}
@@ -80,12 +83,19 @@ export default function Footer() {
           <Col xs={12} md={4} style={{ textAlign: "center" }}>
             {/* Social Media */}
             <div style={{ display: "flex", justifyContent: "center", gap: 18 }}>
-              <a href="https://www.instagram.com/developerarea25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              <a href="https://www.instagram.com/campora.official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                 style={{ transition: "transform 0.2s" }}
                 onMouseOver={e => e.currentTarget.firstChild.style.color = CYBER.neon}
                 onMouseOut={e => e.currentTarget.firstChild.style.color = CYBER.accent}
               >
                 <FaInstagram size={26} color={CYBER.accent} />
+              </a>
+              <a href="https://github.com/cbraind" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                style={{ transition: "transform 0.2s" }}
+                onMouseOver={e => e.currentTarget.firstChild.style.color = CYBER.neon}
+                onMouseOut={e => e.currentTarget.firstChild.style.color = CYBER.accent}
+              >
+                <FaGithub size={26} color={CYBER.accent} />
               </a>
             </div>
           </Col>
@@ -93,10 +103,10 @@ export default function Footer() {
         <Row>
           <Col xs={12} style={{ textAlign: "center", fontSize: 15, color: CYBER.textDim }}>
             <div style={{ marginBottom: 6 }}>
-              Email: <a href="merchdevmarket@gmail.com" style={{ color: CYBER.accent, textDecoration: "none" }}>merchdevmarket@gmail.com</a> | WA: <a href="https://wa.me/6281234567890" style={{ color: CYBER.accent, textDecoration: "none" }}>+62 812-3456-7890</a>
+              Email: <a href="mailto:campora.support@gmail.com" style={{ color: CYBER.accent, textDecoration: "none" }}>campora.support@gmail.com</a> | WA: <a href="https://wa.me/6281234567890" style={{ color: CYBER.accent, textDecoration: "none" }}>+62 812-3456-7890</a>
             </div>
             <div style={{ fontSize: 13, marginTop: 4 }}>
-              &copy; {new Date().getFullYear()} MarketPlace Dev. All rights reserved.
+              &copy; {new Date().getFullYear()} Campora by CBraind. All rights reserved.
             </div>
           </Col>
         </Row>

@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import { Container, Button } from "react-bootstrap";
+import { useEffect, useRef } from "react";
+import { Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 // Style konsisten dengan CategProd.js
@@ -88,8 +88,17 @@ export default function Cta() {
             textShadow: `0 1px 4px ${CYBER.surface}88`,
           }}
         >
-          Mulai belanja produk developer sekarang!
+          Siap untuk KKN yang Lebih Terorganisir?
         </h2>
+        <p style={{
+          fontSize: 18,
+          color: CYBER.textDim,
+          marginBottom: 20,
+          maxWidth: 600,
+          margin: "0 auto 20px auto"
+        }}>
+          Mulai persiapan KKN Anda dengan Campora. Semua kebutuhan tersedia dalam satu platform!
+        </p>
         <div style={{ display: "flex", gap: 18, justifyContent: "center", flexWrap: "wrap", marginTop: 32 }}>
           <Button
             style={{
@@ -114,7 +123,7 @@ export default function Cta() {
               e.currentTarget.style.color = CYBER.text;
             }}
           >
-            Lihat Produk
+            Lihat Paket KKN
           </Button>
           <Button
             style={{
@@ -129,6 +138,7 @@ export default function Cta() {
               boxShadow: `0 2px 8px ${CYBER.accent2}22`,
               transition: "background 0.2s, color 0.2s, border 0.2s",
             }}
+            onClick={() => window.open("https://wa.me/6281234567890?text=Halo Campora! Saya ingin konsultasi untuk persiapan KKN.", "_blank")}
             onMouseOver={e => {
               e.currentTarget.style.background = CYBER.accent2;
               e.currentTarget.style.color = CYBER.bg;
@@ -140,7 +150,7 @@ export default function Cta() {
               e.currentTarget.style.border = `2px solid ${CYBER.accent}`;
             }}
           >
-            Hubungi Kami
+            💬 Konsultasi via WA
           </Button>
         </div>
       </Container>

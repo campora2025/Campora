@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { FaCheckCircle, FaWhatsapp, FaShoppingCart } from "react-icons/fa";
+import { useEffect, useRef } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { FaCheckCircle, FaSearch, FaWhatsapp } from "react-icons/fa";
 
 // Style konsisten dengan CategProd.js
 const CYBER = {
@@ -21,27 +21,30 @@ const FONT = {
 
 const steps = [
   {
-    icon: <FaShoppingCart size={32} color={CYBER.accent} />,
-    title: "Pilih Produk",
-    desc: "Telusuri katalog dan pilih produk favoritmu.",
+    icon: <FaSearch size={32} color={CYBER.accent} />,
+    title: "Pilih Paket",
+    desc: "Telusuri paket KKN dan layanan yang sesuai kebutuhan Anda.",
   },
   {
     icon: <FaWhatsapp size={32} color={CYBER.accent} />,
-    title: "Klik WhatsApp",
-    desc: "Klik tombol WhatsApp di halaman produk.",
+    title: "Konsultasi via WA",
+    desc: "Klik tombol WhatsApp untuk konsultasi detail dengan tim kami.",
   },
   {
     icon: <FaCheckCircle size={32} color={CYBER.accent} />,
-    title: "Kirim Pesan",
-    desc: "Kirim format chat otomatis ke admin untuk order.",
+    title: "Konfirmasi & Bayar",
+    desc: "Konfirmasi pesanan dan lakukan pembayaran sesuai kesepakatan.",
   },
 ];
 
-const waTemplate = `Halo Admin, saya ingin order:
-- Nama Produk: [isi nama produk]
-- Jumlah: [isi jumlah]
-- Catatan: [opsional]
-Terima kasih!`;
+const waTemplate = `Halo Campora! Saya ingin konsultasi untuk:
+- Jenis KKN: [Individual/Kelompok]
+- Lokasi KKN: [Nama Daerah]
+- Tanggal: [Tanggal mulai KKN]
+- Jumlah peserta: [Jumlah orang]
+- Kebutuhan: [Paket/layanan yang diinginkan]
+
+Mohon info detail dan harga. Terima kasih!`;
 
 export default function Cara() {
   const sectionRef = useRef();

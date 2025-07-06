@@ -1,9 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
-import { Card, Button, Badge } from "react-bootstrap";
-import { categories } from "../../data/categories";
+import { Badge, Button, Card } from "react-bootstrap";
 import { FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { categories } from "../../data/categories";
 
 // Style konsisten dengan CategProd.js
 const CYBER = {
@@ -114,6 +113,58 @@ export default function ProdCard({ product }) {
         }}>
           {product.description}
         </Card.Text>
+
+        {/* Show includes if available (for KKN packages) */}
+        {product.includes && (
+          <div style={{
+            width: "100%",
+            marginBottom: 12,
+            padding: "8px 12px",
+            background: CYBER.bg,
+            borderRadius: 8,
+            border: `1px solid ${CYBER.accent2}33`
+          }}>
+            <div style={{
+              fontSize: 12,
+              color: CYBER.accent2,
+              fontWeight: FONT.headerWeight,
+              marginBottom: 4,
+              textAlign: "center"
+            }}>
+              Termasuk:
+            </div>
+            <ul style={{
+              color: CYBER.textDim,
+              fontSize: 12,
+              margin: 0,
+              paddingLeft: 16,
+              listStyle: "disc"
+            }}>
+              {product.includes.slice(0, 3).map((item, idx) => (
+                <li key={idx} style={{ marginBottom: 2 }}>{item}</li>
+              ))}
+              {product.includes.length > 3 && (
+                <li style={{ color: CYBER.accent, fontStyle: "italic" }}>
+                  +{product.includes.length - 3} lainnya
+                </li>
+              )}
+            </ul>
+          </div>
+        )}
+
+        {/* Show estimation info if available */}
+        {(product.estimasiOngkir || product.estimasiHarga) && (
+          <div style={{
+            fontSize: 11,
+            color: CYBER.neon,
+            textAlign: "center",
+            marginBottom: 8,
+            fontStyle: "italic"
+          }}>
+            {product.estimasiOngkir || product.estimasiHarga}
+          </div>
+        )}
+
         <div style={{
           fontWeight: FONT.headerWeight,
           fontSize: 17,

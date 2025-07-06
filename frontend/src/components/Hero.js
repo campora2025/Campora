@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Hardcode warna dan font sesuai Navbar (cyber/informatika soft)
@@ -105,7 +105,7 @@ export default function Hero() {
                 marginRight: 4,
               }}
             >
-              <span style={{ fontFamily: FONT.family }}>{'>'}</span>
+              <span style={{ fontFamily: FONT.family }}>🏕️</span>
             </div>
             <span
               style={{
@@ -116,7 +116,7 @@ export default function Hero() {
                 textShadow: `0 1px 4px ${CYBER.surface}88`
               }}
             >
-              C-Devia Mart
+              Campora
             </span>
           </div>
           {/* Headline */}
@@ -130,9 +130,9 @@ export default function Hero() {
               textShadow: `0 2px 8px ${CYBER.surface}55`
             }}
           >
-            Merch Developer Keren.<br />
+            Terjun Lebih Siap,<br />
             <span style={{ color: CYBER.accent, textShadow: `0 2px 8px ${CYBER.accent2}22` }}>
-              Biar Coding Makin Gaya!
+              Bersama Campora!
             </span>
           </h1>
           {/* Subheadline */}
@@ -145,7 +145,7 @@ export default function Hero() {
               letterSpacing: 0.5,
             }}
           >
-            Kaos, hoodie, stiker, dan merch eksklusif untuk developer Indonesia. Tampil beda, tetap geek!
+            Platform lengkap untuk kebutuhan KKN Anda. Hemat, terpercaya, dan praktis - semua tersedia dalam satu tempat!
           </p>
           {/* CTA Buttons */}
           <div style={{ display: "flex", gap: 16 }}>
@@ -176,7 +176,7 @@ export default function Hero() {
                 e.currentTarget.style.color = "#fff";
               }}
             >
-              Lihat Produk
+              Lihat Paket
             </button>
             <button
               style={{
@@ -202,7 +202,7 @@ export default function Hero() {
                 e.currentTarget.style.color = CYBER.text;
               }}
             >
-              Order via WA
+              Pesan via WA
             </button>
           </div>
         </div>

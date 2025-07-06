@@ -1,12 +1,12 @@
-import React from "react";
-import MainNavbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import CategProd from "../components/CategProd";
-import ProdHigh from "../components/ProdHigh";
 import Alasan from "../components/Alasan";
 import Cara from "../components/Cara";
+import CategProd from "../components/CategProd";
 import Cta from "../components/Cta";
+import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import MainNavbar from "../components/Navbar";
+import ProdHigh from "../components/ProdHigh";
 
 export default function Landing() {
   return (
@@ -19,6 +19,7 @@ export default function Landing() {
       <Cara />
       <Cta />
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }

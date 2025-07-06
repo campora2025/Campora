@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function AboutStory() {
   return (
@@ -12,13 +11,13 @@ export default function AboutStory() {
       boxShadow: "0 2px 12px #FFC10722"
     }}>
       <h4 style={{ color: "#FF5722", fontWeight: 700, marginBottom: 14 }}>
-        Cerita Kami
+        Filosofi Brand
       </h4>
       <p style={{ fontSize: 17, lineHeight: 1.7, color: "#B0B0B0" }}>
-        Awalnya, kami hanya iseng dan gabut, namun melihat banyaknya permintaan dari teman-teman dan komunitas akan produk-produk identitas informatika seperti kaos, hoodie, gelang, dan stiker, akhirnya kami memutuskan untuk membuka C-Devia Mart.
+        <strong style={{ color: "#FFC107" }}>Campora</strong> hadir sebagai mitra persiapan pengabdian mahasiswa yang menjunjung efisiensi, keadilan harga, dan semangat inovasi. Nama Campora sendiri merupakan singkatan dari <strong>Creative Mission Platform for Outreach and Readiness Assistance</strong>.
       </p>
       <p style={{ fontSize: 17, lineHeight: 1.7, color: "#B0B0B0" }}>
-        Kami percaya bahwa identitas informatika bukan sekadar gaya, tapi juga bentuk kebanggaan dan semangat dalam dunia teknologi. Setiap produk kami dibuat dengan desain unik dan kualitas terbaik untuk para developer, mahasiswa, dan pecinta IT.
+        Kami percaya bahwa setiap mahasiswa berhak mendapatkan layanan persiapan KKN yang mudah, terjangkau, dan terpercaya. Melalui platform ini, kami menyediakan semua kebutuhan logistik KKN dalam satu tempat dengan harga transparan dan proses yang efisien.
       </p>
     </div>
   );

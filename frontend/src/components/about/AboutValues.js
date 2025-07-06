@@ -1,27 +1,26 @@
-import React from "react";
-import { FaCode, FaUsers, FaStar, FaLightbulb } from "react-icons/fa";
+import { FaClipboardCheck, FaDollarSign, FaHandshake, FaTruck } from "react-icons/fa";
 
 export default function AboutValues() {
   const values = [
     {
-      icon: <FaCode style={{ color: "#00bfae", fontSize: 28 }} />,
-      title: "Identitas Informatika",
-      desc: "Produk kami dirancang khusus untuk komunitas IT, developer, dan mahasiswa informatika."
+      icon: <FaClipboardCheck style={{ color: "#00bfae", fontSize: 28 }} />,
+      title: "Kesiapan",
+      desc: "Semua kebutuhan logistik KKN tersedia dalam satu tempat untuk kemudahan mahasiswa."
     },
     {
-      icon: <FaStar style={{ color: "#FFC107", fontSize: 28 }} />,
-      title: "Kualitas Terbaik",
-      desc: "Kami selalu mengutamakan bahan dan hasil cetak yang berkualitas untuk kenyamanan dan kepuasan pelanggan."
+      icon: <FaHandshake style={{ color: "#FFC107", fontSize: 28 }} />,
+      title: "Kepercayaan",
+      desc: "Terhubung langsung dengan vendor lokal yang telah diverifikasi dan terpercaya."
     },
     {
-      icon: <FaUsers style={{ color: "#FF5722", fontSize: 28 }} />,
-      title: "Komunitas & Kolaborasi",
-      desc: "Kami terbuka untuk kolaborasi dan mendukung semangat komunitas teknologi di Indonesia."
+      icon: <FaTruck style={{ color: "#FF5722", fontSize: 28 }} />,
+      title: "Efisiensi",
+      desc: "Proses pemesanan mudah via website dan WhatsApp dengan layanan yang cepat."
     },
     {
-      icon: <FaLightbulb style={{ color: "#E1306C", fontSize: 28 }} />,
-      title: "Desain Unik & Kreatif",
-      desc: "Setiap produk dibuat dengan ide-ide kreatif yang fresh dan relate dengan dunia IT."
+      icon: <FaDollarSign style={{ color: "#E1306C", fontSize: 28 }} />,
+      title: "Aksesibilitas",
+      desc: "Harga transparan dan lebih terjangkau dibanding vendor umum untuk mahasiswa."
     }
   ];
 
@@ -36,7 +35,7 @@ export default function AboutValues() {
       boxShadow: "0 2px 12px #FFC10722"
     }}>
       <h4 style={{ color: "#FFC107", fontWeight: 700, marginBottom: 18 }}>
-        Nilai & Keunggulan Kami
+        Nilai-nilai Inti Campora
       </h4>
       <div style={{
         display: "flex",

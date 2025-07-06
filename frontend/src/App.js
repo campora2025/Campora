@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Cart from "./components/produk/Cart";
+import ProdDetail from "./components/produk/ProdDetail";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 import Landing from "./pages/Landing";
 import ProductPage from "./pages/Product";
-import ProdDetail from "./components/produk/ProdDetail";
-import Cart from "./components/produk/Cart";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
 
 function getCartFromLocal() {
   try {
@@ -64,6 +65,7 @@ function App() {
         <Route path="/produk/:id" element={<ProdDetail onAddToCart={handleAddToCart} />} />
         <Route path="/kontak" element={<Contact />} />
         <Route path="/tentang" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       <Cart
         items={cart}

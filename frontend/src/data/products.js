@@ -1,35 +1,41 @@
 // src/data/products.js
 export const products = [
-    // T-SHIRT
+    // PAKET KKN BASIC
     {
-        id: 'tshirt-dev-life',
-        name: 'T-Shirt Dev Life',
-        category: 'tshirt',
-        price: 150000,
-        image: '/images/tshirt-dev.png',
-        model3D: '/mockups/tshirt-dev.glb',
-        description: 'T-Shirt keren untuk para developer.',
-        whatsappMessage: 'Saya ingin pesan T-Shirt Dev Life dari C-Devia Mart.'
+        id: 'paket-kkn-basic',
+        name: 'Paket KKN Basic',
+        category: 'paket-kkn',
+        price: 2500000,
+        image: '/images/paket-basic.png',
+        model3D: '/mockups/paket-basic.glb',
+        description: 'Paket dasar untuk KKN dengan transportasi dan banner.',
+        includes: ['Transportasi mobil (3 hari)', 'Banner 2x1 meter', 'ID Card 10 pcs'],
+        estimasiOngkir: 'Gratis untuk radius 50km',
+        whatsappMessage: 'Saya ingin pesan Paket KKN Basic dari Campora. Mohon info detail dan ketersediaan.'
     },
     {
-        id: 'tshirt-tech-enthusiast',
-        name: 'T-Shirt Tech Enthusiast',
-        category: 'tshirt',
-        price: 140000,
-        image: '/images/tshirt-tech.png',
-        model3D: '/mockups/tshirt-tech.glb',
-        description: 'T-Shirt stylish untuk penggemar teknologi.',
-        whatsappMessage: 'Saya ingin pesan T-Shirt Tech Enthusiast dari C-Devia Mart.'
+        id: 'paket-kkn-standard',
+        name: 'Paket KKN Standard',
+        category: 'paket-kkn',
+        price: 4200000,
+        image: '/images/paket-standard.png',
+        model3D: '/mockups/paket-standard.glb',
+        description: 'Paket lengkap untuk KKN dengan transportasi, banner, dan merchandise.',
+        includes: ['Transportasi mobil (5 hari)', 'Banner 3x2 meter', 'ID Card 15 pcs', 'T-Shirt KKN 10 pcs', 'Goodie bag'],
+        estimasiOngkir: 'Gratis untuk radius 75km',
+        whatsappMessage: 'Saya ingin pesan Paket KKN Standard dari Campora. Mohon info detail dan ketersediaan.'
     },
     {
-        id: 'tshirt-cyberpunk',
-        name: 'T-Shirt Cyberpunk',
-        category: 'tshirt',
-        price: 155000,
-        image: '/images/tshirt-cyberpunk.png',
-        model3D: '/mockups/tshirt-cyberpunk.glb',
-        description: 'T-Shirt bertema cyberpunk untuk coder.',
-        whatsappMessage: 'Saya ingin pesan T-Shirt Cyberpunk dari C-Devia Mart.'
+        id: 'paket-kkn-premium',
+        name: 'Paket KKN Premium',
+        category: 'paket-kkn',
+        price: 6500000,
+        image: '/images/paket-premium.png',
+        model3D: '/mockups/paket-premium.glb',
+        description: 'Paket premium untuk KKN dengan semua fasilitas lengkap.',
+        includes: ['Transportasi mobil + pickup (7 hari)', 'Banner jumbo 4x3 meter', 'ID Card 25 pcs', 'T-Shirt KKN 20 pcs', 'Topi KKN 15 pcs', 'Goodie bag premium', 'Dokumentasi foto'],
+        estimasiOngkir: 'Gratis untuk radius 100km',
+        whatsappMessage: 'Saya ingin pesan Paket KKN Premium dari Campora. Mohon info detail dan ketersediaan.'
     },
     {
         id: 'tshirt-linux',
@@ -311,4 +317,82 @@ export const products = [
         description: 'Stiker motif hacker.',
         whatsappMessage: 'Saya ingin pesan Stiker Hacker dari C-Devia Mart.'
     },
+
+    // TRANSPORTASI
+    {
+        id: 'mobil-pribadi',
+        name: 'Rental Mobil Pribadi',
+        category: 'transportasi',
+        price: 500000,
+        image: '/images/mobil-pribadi.png',
+        model3D: '/mockups/mobil-pribadi.glb',
+        description: 'Rental mobil pribadi untuk transportasi KKN (per hari).',
+        includes: ['Driver berpengalaman', 'BBM included', 'AC + musik'],
+        estimasiHarga: 'Rp 500.000/hari + Rp 3.000/km',
+        whatsappMessage: 'Saya ingin sewa Mobil Pribadi untuk KKN dari Campora. Mohon info harga dan ketersediaan.'
+    },
+    {
+        id: 'pickup-barang',
+        name: 'Pickup Barang KKN',
+        category: 'transportasi',
+        price: 350000,
+        image: '/images/pickup-barang.png',
+        model3D: '/mockups/pickup-barang.glb',
+        description: 'Pickup untuk transportasi barang-barang KKN (per hari).',
+        includes: ['Driver + kernet', 'BBM included', 'Kapasitas 1 ton'],
+        estimasiHarga: 'Rp 350.000/hari + Rp 2.500/km',
+        whatsappMessage: 'Saya ingin sewa Pickup Barang untuk KKN dari Campora. Mohon info harga dan ketersediaan.'
+    },
+
+    // BANNER & ID CARD
+    {
+        id: 'banner-standard',
+        name: 'Banner KKN Standard',
+        category: 'banner',
+        price: 150000,
+        image: '/images/banner-standard.png',
+        model3D: '/mockups/banner-standard.glb',
+        description: 'Banner berkualitas untuk kegiatan KKN (2x1 meter).',
+        includes: ['Bahan flexi korea', 'Design custom', 'Finishing mata ayam'],
+        estimasiHarga: 'Rp 75.000/meter persegi',
+        whatsappMessage: 'Saya ingin pesan Banner KKN Standard dari Campora. Mohon info design dan ukuran.'
+    },
+    {
+        id: 'banner-jumbo',
+        name: 'Banner KKN Jumbo',
+        category: 'banner',
+        price: 600000,
+        image: '/images/banner-jumbo.png',
+        model3D: '/mockups/banner-jumbo.glb',
+        description: 'Banner besar untuk acara utama KKN (4x3 meter).',
+        includes: ['Bahan flexi premium', 'Design custom', 'Finishing mata ayam + tali'],
+        estimasiHarga: 'Rp 50.000/meter persegi (min 12m²)',
+        whatsappMessage: 'Saya ingin pesan Banner KKN Jumbo dari Campora. Mohon info design dan ukuran.'
+    },
+    {
+        id: 'id-card-kkn',
+        name: 'ID Card KKN',
+        category: 'merchandise',
+        price: 15000,
+        image: '/images/id-card-kkn.png',
+        model3D: '/mockups/id-card-kkn.glb',
+        description: 'ID Card berkualitas untuk peserta KKN (per pcs).',
+        includes: ['Bahan PVC premium', 'Design custom', 'Tali lanyard'],
+        estimasiHarga: 'Rp 15.000/pcs (min order 10 pcs)',
+        whatsappMessage: 'Saya ingin pesan ID Card KKN dari Campora. Mohon info design dan jumlah.'
+    },
+
+    // T-SHIRT KKN
+    {
+        id: 'tshirt-kkn-custom',
+        name: 'T-Shirt KKN Custom',
+        category: 'merchandise',
+        price: 85000,
+        image: '/images/tshirt-kkn.png',
+        model3D: '/mockups/tshirt-kkn.glb',
+        description: 'T-Shirt custom untuk peserta KKN dengan design sesuai keinginan.',
+        includes: ['Bahan combed 30s', 'Sablon DTF/polyflex', 'Design custom gratis'],
+        estimasiHarga: 'Rp 85.000/pcs (min order 10 pcs)',
+        whatsappMessage: 'Saya ingin pesan T-Shirt KKN Custom dari Campora. Mohon info design dan ukuran.'
+    }
 ];

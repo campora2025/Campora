@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaUsers, FaPaintBrush, FaWhatsapp, FaCogs } from "react-icons/fa";
+import { useEffect, useRef } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { FaClock, FaDollarSign, FaHandshake, FaShieldAlt } from "react-icons/fa";
 
 // Hardcode warna & font agar konsisten dengan CategProd.js/Hero.js
 const CYBER = {
@@ -21,24 +21,24 @@ const FONT = {
 
 const reasons = [
   {
-    icon: <FaPaintBrush size={32} color={CYBER.accent} />,
-    title: "Original & Kreatif",
-    desc: "Produk hasil karya komunitas developer Indonesia, desain unik & eksklusif.",
+    icon: <FaDollarSign size={32} color={CYBER.accent} />,
+    title: "Hemat & Terjangkau",
+    desc: "Harga transparan dan lebih terjangkau dibanding vendor umum untuk mahasiswa.",
   },
   {
-    icon: <FaCogs size={32} color={CYBER.accent} />,
-    title: "Custom & Pre-order",
-    desc: "Bisa request desain custom atau pre-order sesuai kebutuhanmu.",
+    icon: <FaHandshake size={32} color={CYBER.accent} />,
+    title: "Terpercaya",
+    desc: "Terhubung langsung dengan vendor lokal yang telah diverifikasi dan terpercaya.",
   },
   {
-    icon: <FaWhatsapp size={32} color={CYBER.accent} />,
-    title: "Pembayaran Mudah",
-    desc: "Order & pembayaran praktis langsung via WhatsApp.",
+    icon: <FaClock size={32} color={CYBER.accent} />,
+    title: "Praktis & Efisien",
+    desc: "Proses pemesanan mudah via website dan WhatsApp dengan layanan yang cepat.",
   },
   {
-    icon: <FaUsers size={32} color={CYBER.accent} />,
-    title: "Dukungan Komunitas",
-    desc: "Bagian dari ekosistem komunitas: edukasi, sharing, dan kolaborasi.",
+    icon: <FaShieldAlt size={32} color={CYBER.accent} />,
+    title: "Garansi Kualitas",
+    desc: "Semua produk bergaransi dengan standar kualitas terbaik untuk KKN Anda.",
   },
 ];
 
@@ -98,7 +98,7 @@ export default function Alasan() {
             textShadow: `0 1px 4px ${CYBER.surface}88`,
           }}
         >
-          Kenapa C-Devia Mart?
+          Kenapa Pilih Campora?
         </h2>
         <Row xs={1} md={2} className="g-4" style={{ maxWidth: 900, margin: "0 auto" }}>
           {reasons.map((item, idx) => (

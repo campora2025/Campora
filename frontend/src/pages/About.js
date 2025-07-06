@@ -1,9 +1,10 @@
-import React from "react";
-import MainNavbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import AboutHead from "../components/about/AboutHead";
 import AboutStory from "../components/about/AboutStory";
 import AboutValues from "../components/about/AboutValues";
+import AboutVisiMisi from "../components/about/AboutVisiMisi";
+import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import Footer from "../components/Footer";
+import MainNavbar from "../components/Navbar";
 
 export default function About() {
   return (
@@ -16,9 +17,11 @@ export default function About() {
       }}>
         <AboutHead />
         <AboutStory />
+        <AboutVisiMisi />
         <AboutValues />
       </div>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

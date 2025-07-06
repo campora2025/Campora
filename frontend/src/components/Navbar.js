@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
-import { FaInstagram, FaGithub } from "react-icons/fa";
+import { useEffect, useRef } from "react";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { FaInstagram } from "react-icons/fa";
 
 // Warna cyber/informatika versi lebih soft
 const CYBER = {
@@ -58,7 +58,7 @@ export default function MainNavbar() {
         <Navbar.Brand href="/" style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <img
             src={"/images/logo.png"}
-            alt="C-Devia Mart Logo"
+            alt="Campora Logo"
             style={{
               width: 42,
               height: 42,
@@ -77,16 +77,16 @@ export default function MainNavbar() {
               fontSize: 20,
               textShadow: `0 1px 4px ${CYBER.surface}88`
             }}>
-              C-Devia
+              Cam
             </span>
             <span style={{
               color: CYBER.accent,
               fontWeight: FONT.headerWeight,
               fontSize: 20,
-              marginLeft: 4,
+              marginLeft: 0,
               textShadow: `0 1px 4px ${CYBER.surface}88`
             }}>
-              Mart
+              pora
             </span>
           </span>
         </Navbar.Brand>
@@ -120,6 +120,15 @@ export default function MainNavbar() {
               fontSize: 15,
               transition: "color 0.2s, border-bottom 0.2s",
             }}>Tentang</Nav.Link>
+            <Nav.Link href="/faq" style={{
+              color: CYBER.text,
+              fontWeight: FONT.headerWeight,
+              textTransform: "uppercase",
+              borderBottom: "2px solid transparent",
+              letterSpacing: 1.2,
+              fontSize: 15,
+              transition: "color 0.2s, border-bottom 0.2s",
+            }}>FAQ</Nav.Link>
             <Nav.Link href="/kontak" style={{
               color: CYBER.text,
               fontWeight: FONT.headerWeight,

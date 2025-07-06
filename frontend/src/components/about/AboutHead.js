@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function AboutHead() {
   return (
@@ -15,15 +14,15 @@ export default function AboutHead() {
         marginBottom: 10,
         textShadow: "0 2px 8px #23242a55"
       }}>
-        Tentang C-Devia Mart
+        Tentang Campora
       </h2>
       <p style={{
         color: "#B0B0B0",
         fontSize: 18,
-        maxWidth: 520,
+        maxWidth: 600,
         margin: "0 auto"
       }}>
-        C-Devia Mart hadir untuk memenuhi kebutuhan identitas informatika. Berawal dari banyaknya permintaan teman-teman akan produk bertema IT, kami yang awalnya iseng dan gabut akhirnya memutuskan untuk membuka usaha ini. 
+        Campora adalah platform turunan dari ekosistem CBraind yang secara khusus dirancang untuk mendukung kebutuhan mahasiswa yang akan menjalani pengabdian masyarakat seperti Kuliah Kerja Nyata (KKN). Di sini, mahasiswa bisa mendapatkan layanan dan produk penting yang dibutuhkan secara praktis dan terjangkau.
       </p>
     </div>
   );

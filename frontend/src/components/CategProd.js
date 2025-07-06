@@ -1,7 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaUserSecret, FaShirt } from "react-icons/fa6";
-import { FaTshirt, FaRegStickyNote } from "react-icons/fa"; // FaCircle dihapus
+import { useEffect, useRef } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { FaBox, FaBullhorn, FaIdCard, FaTruck } from "react-icons/fa";
 
 // Warna dan font konsisten dengan Hero/Navbar
 const CYBER = {
@@ -20,52 +19,26 @@ const FONT = {
   bodyWeight: 400,
 };
 
-// Custom SVG untuk gelang: lingkaran outline, tengah kosong
-function GelangIcon({ size = 38, color = CYBER.neon, stroke = 4 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 38 38" fill="none">
-      <circle
-        cx="19"
-        cy="19"
-        r={size / 2 - stroke}
-        stroke={color}
-        strokeWidth={stroke}
-        fill="none"
-      />
-    </svg>
-  );
-}
-
 const categories = [
   {
-    name: "T-shirt",
-    icon: <FaTshirt size={38} color={CYBER.accent} />,
-    desc: "Kaos premium bertema coding & cyber.",
+    name: "Paket KKN",
+    icon: <FaBox size={38} color={CYBER.accent} />,
+    desc: "Paket lengkap untuk kebutuhan KKN Anda.",
   },
   {
-    name: "Hoodie",
-    icon: <FaUserSecret size={38} color={CYBER.neon} />,
-    desc: "Hoodie nyaman, cocok buat hacker & dev.",
+    name: "Transportasi",
+    icon: <FaTruck size={38} color={CYBER.neon} />,
+    desc: "Rental mobil & pickup untuk KKN.",
   },
   {
-    name: "Jaket",
-    icon: <FaShirt size={38} color={CYBER.textDim} />,
-    desc: "Jaket stylish untuk developer aktif.",
+    name: "Banner & Print",
+    icon: <FaBullhorn size={38} color={CYBER.accent2} />,
+    desc: "Banner, spanduk, dan kebutuhan print.",
   },
   {
-    name: "PDH/Kemeja",
-    icon: <FaShirt size={38} color={CYBER.accent2} />,
-    desc: "Kemeja PDH elegan, cocok untuk event & kerja.",
-  },
-  {
-    name: "Stiker",
-    icon: <FaRegStickyNote size={38} color={CYBER.accent2} />,
-    desc: "Stiker laptop, gear, dan workspace kamu.",
-  },
-  {
-    name: "Gelang",
-    icon: <GelangIcon />,
-    desc: "Gelang keren untuk developer.",
+    name: "Merchandise",
+    icon: <FaIdCard size={38} color={CYBER.surface === "#23242a" ? "#E1306C" : "#E1306C"} />,
+    desc: "ID Card, T-Shirt, dan merchandise KKN.",
   },
 ];
 
@@ -125,7 +98,7 @@ export default function CategProd() {
               textShadow: `0 1px 4px ${CYBER.surface}88`
             }}
           >
-            Kategori Produk
+            Layanan Campora
           </h2>
         </div>
         <Row xs={1} md={3} className="g-4" style={{ justifyContent: "center" }}>
