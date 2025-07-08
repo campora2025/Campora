@@ -1,24 +1,25 @@
 import { FaClipboardCheck, FaDollarSign, FaHandshake, FaTruck } from "react-icons/fa";
+import { FONT, GREEN_THEME } from "../../utils/theme";
 
 export default function AboutValues() {
   const values = [
     {
-      icon: <FaClipboardCheck style={{ color: "#00bfae", fontSize: 28 }} />,
+      icon: <FaClipboardCheck style={{ color: GREEN_THEME.accent, fontSize: 28 }} />,
       title: "Kesiapan",
       desc: "Semua kebutuhan logistik KKN tersedia dalam satu tempat untuk kemudahan mahasiswa."
     },
     {
-      icon: <FaHandshake style={{ color: "#FFC107", fontSize: 28 }} />,
+      icon: <FaHandshake style={{ color: GREEN_THEME.accent2, fontSize: 28 }} />,
       title: "Kepercayaan",
       desc: "Terhubung langsung dengan vendor lokal yang telah diverifikasi dan terpercaya."
     },
     {
-      icon: <FaTruck style={{ color: "#FF5722", fontSize: 28 }} />,
+      icon: <FaTruck style={{ color: GREEN_THEME.neon, fontSize: 28 }} />,
       title: "Efisiensi",
       desc: "Proses pemesanan mudah via website dan WhatsApp dengan layanan yang cepat."
     },
     {
-      icon: <FaDollarSign style={{ color: "#E1306C", fontSize: 28 }} />,
+      icon: <FaDollarSign style={{ color: GREEN_THEME.accent, fontSize: 28 }} />,
       title: "Aksesibilitas",
       desc: "Harga transparan dan lebih terjangkau dibanding vendor umum untuk mahasiswa."
     }
@@ -26,15 +27,16 @@ export default function AboutValues() {
 
   return (
     <div style={{
-      background: "#23242a",
+      background: GREEN_THEME.surface,
       borderRadius: 14,
       padding: 28,
       margin: "0 auto 32px auto",
       maxWidth: 700,
-      color: "#E0E0E0",
-      boxShadow: "0 2px 12px #FFC10722"
+      color: GREEN_THEME.text,
+      boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`,
+      border: `1px solid ${GREEN_THEME.border}`
     }}>
-      <h4 style={{ color: "#FFC107", fontWeight: 700, marginBottom: 18 }}>
+      <h4 style={{ color: GREEN_THEME.accent, fontWeight: FONT.headerWeight, marginBottom: 18 }}>
         Nilai-nilai Inti Campora
       </h4>
       <div style={{
@@ -48,18 +50,19 @@ export default function AboutValues() {
             flex: "1 1 220px",
             minWidth: 200,
             maxWidth: 260,
-            background: "#181A20",
+            background: GREEN_THEME.bg,
             borderRadius: 10,
             padding: 18,
             marginBottom: 8,
             textAlign: "center",
-            boxShadow: "0 1px 8px #FFC10711"
+            boxShadow: `0 1px 8px ${GREEN_THEME.shadow}`,
+            border: `1px solid ${GREEN_THEME.border}`
           }}>
             <div style={{ marginBottom: 10 }}>{val.icon}</div>
-            <div style={{ fontWeight: 700, fontSize: 18, color: "#FFC107", marginBottom: 6 }}>
+            <div style={{ fontWeight: FONT.headerWeight, fontSize: 18, color: GREEN_THEME.accent, marginBottom: 6 }}>
               {val.title}
             </div>
-            <div style={{ color: "#B0B0B0", fontSize: 15 }}>
+            <div style={{ color: GREEN_THEME.textDim, fontSize: 15 }}>
               {val.desc}
             </div>
           </div>

@@ -3,15 +3,17 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FaClock, FaDollarSign, FaHandshake, FaShieldAlt } from "react-icons/fa";
 
 // Hardcode warna & font agar konsisten dengan CategProd.js/Hero.js
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 const FONT = {
   family: "'Fira Mono', 'JetBrains Mono', 'Roboto Mono', 'Consolas', monospace",
@@ -21,22 +23,22 @@ const FONT = {
 
 const reasons = [
   {
-    icon: <FaDollarSign size={32} color={CYBER.accent} />,
+    icon: <FaDollarSign size={32} color={GREEN_THEME.accent} />,
     title: "Hemat & Terjangkau",
     desc: "Harga transparan dan lebih terjangkau dibanding vendor umum untuk mahasiswa.",
   },
   {
-    icon: <FaHandshake size={32} color={CYBER.accent} />,
+    icon: <FaHandshake size={32} color={GREEN_THEME.accent} />,
     title: "Terpercaya",
     desc: "Terhubung langsung dengan vendor lokal yang telah diverifikasi dan terpercaya.",
   },
   {
-    icon: <FaClock size={32} color={CYBER.accent} />,
+    icon: <FaClock size={32} color={GREEN_THEME.accent} />,
     title: "Praktis & Efisien",
     desc: "Proses pemesanan mudah via website dan WhatsApp dengan layanan yang cepat.",
   },
   {
-    icon: <FaShieldAlt size={32} color={CYBER.accent} />,
+    icon: <FaShieldAlt size={32} color={GREEN_THEME.accent} />,
     title: "Garansi Kualitas",
     desc: "Semua produk bergaransi dengan standar kualitas terbaik untuk KKN Anda.",
   },
@@ -78,12 +80,12 @@ export default function Alasan() {
     <section
       ref={sectionRef}
       style={{
-        background: `linear-gradient(120deg, ${CYBER.bg} 80%, ${CYBER.surface} 100%)`,
-        color: CYBER.text,
+        background: `linear-gradient(120deg, ${GREEN_THEME.bg} 80%, ${GREEN_THEME.surface} 100%)`,
+        color: GREEN_THEME.text,
         fontFamily: FONT.family,
         padding: "56px 0 36px 0",
-        borderBottom: `2px solid ${CYBER.surface}`,
-        boxShadow: `0 4px 32px ${CYBER.surface}33`,
+        borderBottom: `2px solid ${GREEN_THEME.border}`,
+        boxShadow: `0 4px 32px ${GREEN_THEME.shadow}`,
       }}
     >
       <Container>
@@ -93,9 +95,9 @@ export default function Alasan() {
             fontSize: 28,
             marginBottom: 32,
             textAlign: "center",
-            color: CYBER.text,
+            color: GREEN_THEME.text,
             letterSpacing: 1.2,
-            textShadow: `0 1px 4px ${CYBER.surface}88`,
+            textShadow: `0 1px 4px ${GREEN_THEME.shadow}`,
           }}
         >
           Kenapa Pilih Campora?
@@ -106,29 +108,29 @@ export default function Alasan() {
               <div
                 ref={el => (cardRefs.current[idx] = el)}
                 style={{
-                  background: CYBER.surface,
+                  background: GREEN_THEME.surface,
                   borderRadius: 18,
-                  boxShadow: `0 2px 12px ${CYBER.accent}22`,
+                  boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`,
                   padding: "32px 24px",
                   display: "flex",
                   alignItems: "flex-start",
                   gap: 18,
                   height: "100%",
                   transition: "transform 0.18s, box-shadow 0.18s, border 0.18s",
-                  border: `2px solid ${CYBER.accent2}22`,
+                  border: `2px solid ${GREEN_THEME.border}`,
                   cursor: "pointer",
                   opacity: 0,
                   transform: "translateY(40px)",
                 }}
                 onMouseOver={e => {
                   e.currentTarget.style.transform = "translateY(-8px) scale(1.04)";
-                  e.currentTarget.style.boxShadow = `0 6px 24px ${CYBER.accent}44`;
-                  e.currentTarget.style.border = `2px solid ${CYBER.neon}`;
+                  e.currentTarget.style.boxShadow = `0 6px 24px ${GREEN_THEME.shadow}`;
+                  e.currentTarget.style.border = `2px solid ${GREEN_THEME.neon}`;
                 }}
                 onMouseOut={e => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = `0 2px 12px ${CYBER.accent}22`;
-                  e.currentTarget.style.border = `2px solid ${CYBER.accent2}22`;
+                  e.currentTarget.style.boxShadow = `0 2px 12px ${GREEN_THEME.shadow}`;
+                  e.currentTarget.style.border = `2px solid ${GREEN_THEME.border}`;
                 }}
               >
                 <div style={{
@@ -137,10 +139,10 @@ export default function Alasan() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  background: CYBER.bg,
+                  background: GREEN_THEME.hover,
                   borderRadius: 14,
-                  boxShadow: `0 2px 8px ${CYBER.accent2}22`,
-                  border: `2px solid ${CYBER.surface}`,
+                  boxShadow: `0 2px 8px ${GREEN_THEME.shadow}`,
+                  border: `2px solid ${GREEN_THEME.border}`,
                   marginRight: 8,
                 }}>
                   {item.icon}
@@ -150,14 +152,14 @@ export default function Alasan() {
                     fontWeight: FONT.headerWeight,
                     fontSize: 18,
                     marginBottom: 6,
-                    color: CYBER.text,
+                    color: GREEN_THEME.text,
                     letterSpacing: 0.8,
-                    textShadow: `0 1px 4px ${CYBER.surface}66`
+                    textShadow: `0 1px 4px ${GREEN_THEME.surface}66`
                   }}>
                     {item.title}
                   </div>
                   <div style={{
-                    color: CYBER.textDim,
+                    color: GREEN_THEME.textDim,
                     fontWeight: FONT.bodyWeight,
                     fontSize: 15,
                     letterSpacing: 0.2,

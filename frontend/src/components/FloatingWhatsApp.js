@@ -1,15 +1,12 @@
+import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-
-const CYBER = {
-  accent: "#FF5722",
-  neon: "#00bfae",
-};
+import WhatsAppAdminModal from "./WhatsAppAdminModal";
 
 export default function FloatingWhatsApp() {
+  const [showWhatsAppModal, setShowWhatsAppModal] = useState(false);
+  
   const handleWhatsAppClick = () => {
-    const message = "Halo Campora! Saya ingin konsultasi untuk persiapan KKN.";
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    setShowWhatsAppModal(true);
   };
 
   return (
@@ -56,6 +53,12 @@ export default function FloatingWhatsApp() {
           }
         }
       `}</style>
+      
+      {/* WhatsApp Admin Modal */}
+      <WhatsAppAdminModal 
+        show={showWhatsAppModal} 
+        handleClose={() => setShowWhatsAppModal(false)} 
+      />
     </div>
   );
 }

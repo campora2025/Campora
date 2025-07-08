@@ -3,15 +3,17 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FaBox, FaBullhorn, FaIdCard, FaTruck } from "react-icons/fa";
 
 // Warna dan font konsisten dengan Hero/Navbar
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 const FONT = {
   family: "'Fira Mono', 'JetBrains Mono', 'Roboto Mono', 'Consolas', monospace",
@@ -22,22 +24,22 @@ const FONT = {
 const categories = [
   {
     name: "Paket KKN",
-    icon: <FaBox size={38} color={CYBER.accent} />,
+    icon: <FaBox size={38} color={GREEN_THEME.accent} />,
     desc: "Paket lengkap untuk kebutuhan KKN Anda.",
   },
   {
     name: "Transportasi",
-    icon: <FaTruck size={38} color={CYBER.neon} />,
+    icon: <FaTruck size={38} color={GREEN_THEME.neon} />,
     desc: "Rental mobil & pickup untuk KKN.",
   },
   {
     name: "Banner & Print",
-    icon: <FaBullhorn size={38} color={CYBER.accent2} />,
+    icon: <FaBullhorn size={38} color={GREEN_THEME.accent2} />,
     desc: "Banner, spanduk, dan kebutuhan print.",
   },
   {
     name: "Merchandise",
-    icon: <FaIdCard size={38} color={CYBER.surface === "#23242a" ? "#E1306C" : "#E1306C"} />,
+    icon: <FaIdCard size={38} color="#E1306C" />,
     desc: "ID Card, T-Shirt, dan merchandise KKN.",
   },
 ];
@@ -78,12 +80,12 @@ export default function CategProd() {
     <section
       ref={sectionRef}
       style={{
-        background: `linear-gradient(120deg, ${CYBER.bg} 80%, ${CYBER.surface} 100%)`,
-        color: CYBER.text,
+        background: `linear-gradient(120deg, ${GREEN_THEME.bg} 80%, ${GREEN_THEME.surface} 100%)`,
+        color: GREEN_THEME.text,
         fontFamily: FONT.family,
         padding: "56px 0 36px 0",
-        borderBottom: `2px solid ${CYBER.surface}`,
-        boxShadow: `0 4px 32px ${CYBER.surface}33`,
+        borderBottom: `2px solid ${GREEN_THEME.border}`,
+        boxShadow: `0 4px 32px ${GREEN_THEME.shadow}`,
       }}
     >
       <Container>
@@ -93,9 +95,9 @@ export default function CategProd() {
               fontWeight: FONT.headerWeight,
               fontSize: 28,
               margin: 0,
-              color: CYBER.text,
+              color: GREEN_THEME.text,
               letterSpacing: 1.2,
-              textShadow: `0 1px 4px ${CYBER.surface}88`
+              textShadow: `0 1px 4px ${GREEN_THEME.shadow}`
             }}
           >
             Layanan Campora
@@ -107,9 +109,9 @@ export default function CategProd() {
               <div
                 ref={el => (cardRefs.current[idx] = el)}
                 style={{
-                  background: CYBER.surface,
+                  background: GREEN_THEME.surface,
                   borderRadius: 18,
-                  boxShadow: `0 2px 12px ${CYBER.accent}22`,
+                  boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`,
                   padding: "36px 24px",
                   minWidth: 180,
                   maxWidth: 260,
@@ -120,17 +122,17 @@ export default function CategProd() {
                   transform: "translateY(40px)",
                   transition: "opacity 0.7s, transform 0.7s",
                   cursor: "pointer",
-                  border: `2px solid ${CYBER.accent2}22`,
+                  border: `2px solid ${GREEN_THEME.border}`,
                 }}
                 onMouseOver={e => {
                   e.currentTarget.style.transform = "translateY(-8px) scale(1.04)";
-                  e.currentTarget.style.boxShadow = `0 6px 24px ${CYBER.accent}44`;
-                  e.currentTarget.style.border = `2px solid ${CYBER.neon}`;
+                  e.currentTarget.style.boxShadow = `0 6px 24px ${GREEN_THEME.shadow}`;
+                  e.currentTarget.style.border = `2px solid ${GREEN_THEME.neon}`;
                 }}
                 onMouseOut={e => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = `0 2px 12px ${CYBER.accent}22`;
-                  e.currentTarget.style.border = `2px solid ${CYBER.accent2}22`;
+                  e.currentTarget.style.boxShadow = `0 2px 12px ${GREEN_THEME.shadow}`;
+                  e.currentTarget.style.border = `2px solid ${GREEN_THEME.border}`;
                 }}
               >
                 <div style={{
@@ -141,9 +143,9 @@ export default function CategProd() {
                   width: 56,
                   height: 56,
                   borderRadius: 14,
-                  background: CYBER.bg,
-                  boxShadow: `0 2px 8px ${CYBER.accent2}22`,
-                  border: `2px solid ${CYBER.surface}`,
+                  background: GREEN_THEME.hover,
+                  boxShadow: `0 2px 8px ${GREEN_THEME.shadow}`,
+                  border: `2px solid ${GREEN_THEME.border}`,
                 }}>
                   {cat.icon}
                 </div>
@@ -152,9 +154,9 @@ export default function CategProd() {
                     marginTop: 8,
                     fontWeight: FONT.headerWeight,
                     fontSize: 18,
-                    color: CYBER.text,
+                    color: GREEN_THEME.text,
                     letterSpacing: 0.8,
-                    textShadow: `0 1px 4px ${CYBER.surface}66`
+                    textShadow: `0 1px 4px ${GREEN_THEME.shadow}`
                   }}
                 >
                   {cat.name}
@@ -162,7 +164,7 @@ export default function CategProd() {
                 <span
                   style={{
                     marginTop: 10,
-                    color: CYBER.textDim,
+                    color: GREEN_THEME.textDim,
                     fontWeight: FONT.bodyWeight,
                     fontSize: 15,
                     textAlign: "center",

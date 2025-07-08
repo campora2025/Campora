@@ -1,5 +1,5 @@
-import React from "react";
-import { FaInstagram, FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { GREEN_THEME } from "../../utils/theme";
 
 export default function ContactSosial() {
   return (
@@ -23,7 +23,7 @@ export default function ContactSosial() {
         href="https://github.com/cdeviamart"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ color: "#fff", fontSize: 32 }}
+        style={{ color: GREEN_THEME.text, fontSize: 32 }}
         aria-label="GitHub"
       >
         <FaGithub />
@@ -41,7 +41,7 @@ export default function ContactSosial() {
         href="https://cdeviamart.com"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ color: "#00bfae", fontSize: 32 }}
+        style={{ color: GREEN_THEME.accent, fontSize: 32 }}
         aria-label="Website"
       >
         <FaGlobe />

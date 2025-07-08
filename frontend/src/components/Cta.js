@@ -2,16 +2,18 @@ import { useEffect, useRef } from "react";
 import { Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-// Style konsisten dengan CategProd.js
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+// Style konsisten dengan tema hijau light mode
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 const FONT = {
   family: "'Fira Mono', 'JetBrains Mono', 'Roboto Mono', 'Consolas', monospace",
@@ -49,12 +51,12 @@ export default function Cta() {
     <section
       ref={sectionRef}
       style={{
-        background: `linear-gradient(120deg, ${CYBER.bg} 80%, ${CYBER.surface} 100%)`,
-        color: CYBER.text,
+        background: `linear-gradient(120deg, ${GREEN_THEME.bg} 80%, ${GREEN_THEME.surface} 100%)`,
+        color: GREEN_THEME.text,
         fontFamily: FONT.family,
         padding: "56px 0 48px 0",
-        borderBottom: `2px solid ${CYBER.surface}`,
-        boxShadow: `0 4px 32px ${CYBER.surface}33`,
+        borderBottom: `2px solid ${GREEN_THEME.border}`,
+        boxShadow: `0 4px 32px ${GREEN_THEME.shadow}`,
         position: "relative",
         overflow: "hidden",
         opacity: 0, // for animation
@@ -73,9 +75,9 @@ export default function Cta() {
           zIndex: 0,
         }}
       >
-        <circle cx="20%" cy="30%" r="120" fill={CYBER.surface} />
-        <circle cx="80%" cy="70%" r="90" fill={CYBER.surface} />
-        <rect x="60%" y="10%" width="120" height="120" rx="32" fill={CYBER.surface} />
+        <circle cx="20%" cy="30%" r="120" fill={GREEN_THEME.hover} />
+        <circle cx="80%" cy="70%" r="90" fill={GREEN_THEME.hover} />
+        <rect x="60%" y="10%" width="120" height="120" rx="32" fill={GREEN_THEME.hover} />
       </svg>
       <Container style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
         <h2
@@ -83,16 +85,16 @@ export default function Cta() {
             fontWeight: FONT.headerWeight,
             fontSize: 28,
             marginBottom: 20,
-            color: CYBER.text,
+            color: GREEN_THEME.text,
             letterSpacing: 1.2,
-            textShadow: `0 1px 4px ${CYBER.surface}88`,
+            textShadow: `0 1px 4px ${GREEN_THEME.shadow}`,
           }}
         >
           Siap untuk KKN yang Lebih Terorganisir?
         </h2>
         <p style={{
           fontSize: 18,
-          color: CYBER.textDim,
+          color: GREEN_THEME.textDim,
           marginBottom: 20,
           maxWidth: 600,
           margin: "0 auto 20px auto"
@@ -102,52 +104,52 @@ export default function Cta() {
         <div style={{ display: "flex", gap: 18, justifyContent: "center", flexWrap: "wrap", marginTop: 32 }}>
           <Button
             style={{
-              background: CYBER.accent,
-              color: CYBER.text,
+              background: GREEN_THEME.accent,
+              color: "#fff",
               border: "none",
               borderRadius: 8,
               padding: "12px 28px",
               fontWeight: FONT.headerWeight,
               fontSize: 18,
               letterSpacing: 0.8,
-              boxShadow: `0 2px 8px ${CYBER.accent2}22`,
+              boxShadow: `0 2px 8px ${GREEN_THEME.shadow}`,
               transition: "background 0.2s, color 0.2s",
             }}
             onClick={() => navigate("/produk")}
             onMouseOver={e => {
-              e.currentTarget.style.background = CYBER.neon;
-              e.currentTarget.style.color = CYBER.bg;
+              e.currentTarget.style.background = GREEN_THEME.neon;
+              e.currentTarget.style.color = "#fff";
             }}
             onMouseOut={e => {
-              e.currentTarget.style.background = CYBER.accent;
-              e.currentTarget.style.color = CYBER.text;
+              e.currentTarget.style.background = GREEN_THEME.accent;
+              e.currentTarget.style.color = "#fff";
             }}
           >
             Lihat Paket KKN
           </Button>
           <Button
             style={{
-              background: CYBER.surface,
-              color: CYBER.accent,
-              border: `2px solid ${CYBER.accent}`,
+              background: GREEN_THEME.surface,
+              color: GREEN_THEME.accent,
+              border: `2px solid ${GREEN_THEME.accent}`,
               borderRadius: 8,
               padding: "12px 28px",
               fontWeight: FONT.headerWeight,
               fontSize: 18,
               letterSpacing: 0.8,
-              boxShadow: `0 2px 8px ${CYBER.accent2}22`,
+              boxShadow: `0 2px 8px ${GREEN_THEME.shadow}`,
               transition: "background 0.2s, color 0.2s, border 0.2s",
             }}
             onClick={() => window.open("https://wa.me/6281234567890?text=Halo Campora! Saya ingin konsultasi untuk persiapan KKN.", "_blank")}
             onMouseOver={e => {
-              e.currentTarget.style.background = CYBER.accent2;
-              e.currentTarget.style.color = CYBER.bg;
-              e.currentTarget.style.border = `2px solid ${CYBER.neon}`;
+              e.currentTarget.style.background = GREEN_THEME.accent2;
+              e.currentTarget.style.color = GREEN_THEME.bg;
+              e.currentTarget.style.border = `2px solid ${GREEN_THEME.neon}`;
             }}
             onMouseOut={e => {
-              e.currentTarget.style.background = CYBER.surface;
-              e.currentTarget.style.color = CYBER.accent;
-              e.currentTarget.style.border = `2px solid ${CYBER.accent}`;
+              e.currentTarget.style.background = GREEN_THEME.surface;
+              e.currentTarget.style.color = GREEN_THEME.accent;
+              e.currentTarget.style.border = `2px solid ${GREEN_THEME.accent}`;
             }}
           >
             💬 Konsultasi via WA

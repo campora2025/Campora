@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: var(--green-bg);
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(135deg, var(--green-primary), var(--green-secondary));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +27,32 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--green-accent);
+}
+
+/* Global Styling untuk Light Green Theme */
+* {
+  transition: all 0.3s ease;
+}
+
+.container, .container-fluid {
+  background-color: var(--green-bg);
+}
+
+.card {
+  background-color: var(--green-surface) !important;
+  border: 1px solid var(--green-border) !important;
+  box-shadow: 0 2px 8px var(--green-shadow) !important;
+}
+
+.btn-primary {
+  background-color: var(--green-primary) !important;
+  border-color: var(--green-primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--green-secondary) !important;
+  border-color: var(--green-secondary) !important;
 }
 
 @keyframes App-logo-spin {

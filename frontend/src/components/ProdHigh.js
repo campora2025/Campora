@@ -1,17 +1,19 @@
-import React, { useRef, useEffect } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { useEffect, useRef } from "react";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-// Warna & font konsisten dengan CategProd.js
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+// Warna & font konsisten dengan tema hijau light mode
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 const FONT = {
   family: "'Fira Mono', 'JetBrains Mono', 'Roboto Mono', 'Consolas', monospace",
@@ -101,12 +103,12 @@ export default function ProdHigh() {
     <section
       ref={sectionRef}
       style={{
-        background: `linear-gradient(120deg, ${CYBER.bg} 80%, ${CYBER.surface} 100%)`,
-        color: CYBER.text,
+        background: `linear-gradient(120deg, ${GREEN_THEME.bg} 80%, ${GREEN_THEME.surface} 100%)`,
+        color: GREEN_THEME.text,
         fontFamily: FONT.family,
         padding: "56px 0 40px 0",
-        borderBottom: `2px solid ${CYBER.surface}`,
-        boxShadow: `0 4px 32px ${CYBER.surface}33`,
+        borderBottom: `2px solid ${GREEN_THEME.border}`,
+        boxShadow: `0 4px 32px ${GREEN_THEME.shadow}`,
         opacity: 0, // for animation
         transition: "opacity 0.7s cubic-bezier(.77,0,.18,1)",
       }}
@@ -117,9 +119,9 @@ export default function ProdHigh() {
             fontWeight: FONT.headerWeight,
             fontSize: 28,
             marginBottom: 32,
-            color: CYBER.text,
+            color: GREEN_THEME.text,
             letterSpacing: 1.2,
-            textShadow: `0 1px 4px ${CYBER.surface}88`,
+            textShadow: `0 1px 4px ${GREEN_THEME.shadow}`,
             textAlign: "center",
           }}
         >
@@ -131,11 +133,11 @@ export default function ProdHigh() {
               <Card
                 ref={el => (cardRefs.current[idx] = el)}
                 style={{
-                  background: CYBER.surface,
-                  color: CYBER.text,
-                  border: `2px solid ${CYBER.accent2}22`,
+                  background: GREEN_THEME.surface,
+                  color: GREEN_THEME.text,
+                  border: `2px solid ${GREEN_THEME.border}`,
                   borderRadius: 18,
-                  boxShadow: `0 2px 12px ${CYBER.accent}22`,
+                  boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`,
                   transition: "transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s, border 0.2s",
                   cursor: "pointer",
                   minWidth: 180,
@@ -149,26 +151,26 @@ export default function ProdHigh() {
                 className="prod-card"
                 onMouseOver={e => {
                   e.currentTarget.style.transform = "translateY(-8px) scale(1.04)";
-                  e.currentTarget.style.boxShadow = `0 6px 24px ${CYBER.accent}44`;
-                  e.currentTarget.style.border = `2px solid ${CYBER.neon}`;
+                  e.currentTarget.style.boxShadow = `0 6px 24px ${GREEN_THEME.shadow}`;
+                  e.currentTarget.style.border = `2px solid ${GREEN_THEME.neon}`;
                 }}
                 onMouseOut={e => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = `0 2px 12px ${CYBER.accent}22`;
-                  e.currentTarget.style.border = `2px solid ${CYBER.accent2}22`;
+                  e.currentTarget.style.boxShadow = `0 2px 12px ${GREEN_THEME.shadow}`;
+                  e.currentTarget.style.border = `2px solid ${GREEN_THEME.border}`;
                 }}
               >
                 <div style={{
                   width: "100%",
                   height: 180,
-                  background: CYBER.bg,
+                  background: GREEN_THEME.hover,
                   borderTopLeftRadius: 18,
                   borderTopRightRadius: 18,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   overflow: "hidden",
-                  borderBottom: `2px solid ${CYBER.surface}`,
+                  borderBottom: `2px solid ${GREEN_THEME.border}`,
                 }}>
                   <img
                     src={prod.img}
@@ -184,15 +186,15 @@ export default function ProdHigh() {
                   <Card.Title style={{
                     fontWeight: FONT.headerWeight,
                     fontSize: 18,
-                    color: CYBER.text,
+                    color: GREEN_THEME.text,
                     letterSpacing: 0.8,
-                    textShadow: `0 1px 4px ${CYBER.surface}66`,
+                    textShadow: `0 1px 4px ${GREEN_THEME.shadow}`,
                     textAlign: "center",
                   }}>
                     {prod.name}
                   </Card.Title>
                   <Card.Text style={{
-                    color: CYBER.textDim,
+                    color: GREEN_THEME.textDim,
                     fontWeight: FONT.bodyWeight,
                     fontSize: 15,
                     textAlign: "center",
@@ -208,20 +210,20 @@ export default function ProdHigh() {
         <div style={{ textAlign: "center" }}>
           <Button
             style={{
-              background: CYBER.accent,
-              color: CYBER.text,
+              background: GREEN_THEME.accent,
+              color: "#fff",
               border: "none",
               borderRadius: 8,
               padding: "12px 32px",
               fontWeight: FONT.headerWeight,
               fontSize: 18,
               letterSpacing: 0.8,
-              boxShadow: `0 2px 8px ${CYBER.accent2}22`,
+              boxShadow: `0 2px 8px ${GREEN_THEME.accent2}22`,
               transition: "background 0.2s",
             }}
             onClick={() => navigate("/produk")}
-            onMouseOver={e => (e.currentTarget.style.background = CYBER.neon)}
-            onMouseOut={e => (e.currentTarget.style.background = CYBER.accent)}
+            onMouseOver={e => (e.currentTarget.style.background = GREEN_THEME.neon)}
+            onMouseOut={e => (e.currentTarget.style.background = GREEN_THEME.accent)}
           >
             Lihat Semua Produk
           </Button>

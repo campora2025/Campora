@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import { products } from "../../data/products";
-import { categories } from "../../data/categories";
 import ProdCard from "./ProdCard";
 import ProdFilter from "./ProdFilter";
 
-// Style konsisten dengan CategProd.js
-const CYBER = {
-  textDim: "#B0B0B0",
-  text: "#E0E0E0",
+// Style konsisten dengan tema hijau light mode
+const GREEN_THEME = {
+  textDim: "#4a7068",
+  text: "#1a4d40",
 };
 
 export default function ProdList() {
@@ -25,7 +24,7 @@ export default function ProdList() {
         style={{
           fontWeight: 700,
           fontSize: 26,
-          color: CYBER.text,
+          color: GREEN_THEME.text,
           letterSpacing: 1.1,
           marginBottom: 18,
           textAlign: "center",
@@ -38,7 +37,7 @@ export default function ProdList() {
         onChange={setSelectedCategory}
       />
       {filteredProducts.length === 0 ? (
-        <div style={{ color: CYBER.textDim, textAlign: "center", margin: "48px 0" }}>
+        <div style={{ color: GREEN_THEME.textDim, textAlign: "center", margin: "48px 0" }}>
           Tidak ada produk pada kategori ini.
         </div>
       ) : (

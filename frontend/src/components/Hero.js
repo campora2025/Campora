@@ -1,16 +1,18 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Hardcode warna dan font sesuai Navbar (cyber/informatika soft)
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+// Tema hijau light mode yang fresh dan modern
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 
 const FONT = {
@@ -60,16 +62,16 @@ export default function Hero() {
     <section
       ref={sectionRef}
       style={{
-        background: `linear-gradient(120deg, ${CYBER.bg} 80%, ${CYBER.surface} 100%)`,
-        color: CYBER.text,
+        background: `linear-gradient(120deg, ${GREEN_THEME.bg} 80%, ${GREEN_THEME.surface} 100%)`,
+        color: GREEN_THEME.text,
         fontFamily: FONT.family,
         padding: "64px 0 48px 0",
         minHeight: "80vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        borderBottom: `2px solid ${CYBER.surface}`,
-        boxShadow: `0 4px 32px ${CYBER.surface}55`,
+        borderBottom: `2px solid ${GREEN_THEME.border}`,
+        boxShadow: `0 4px 32px ${GREEN_THEME.shadow}`,
         opacity: 0, // initial for animation
       }}
     >
@@ -92,16 +94,16 @@ export default function Hero() {
               style={{
                 width: 48,
                 height: 48,
-                background: CYBER.surface,
+                background: GREEN_THEME.surface,
                 borderRadius: 12,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontWeight: 900,
                 fontSize: 28,
-                color: CYBER.accent,
-                boxShadow: `0 2px 8px ${CYBER.accent}33`,
-                border: `2px solid ${CYBER.accent}`,
+                color: GREEN_THEME.accent,
+                boxShadow: `0 2px 8px ${GREEN_THEME.shadow}`,
+                border: `2px solid ${GREEN_THEME.accent}`,
                 marginRight: 4,
               }}
             >
@@ -110,10 +112,10 @@ export default function Hero() {
             <span
               style={{
                 fontWeight: FONT.bodyWeight,
-                color: CYBER.accent2,
+                color: GREEN_THEME.accent2,
                 fontSize: 18,
                 letterSpacing: 1,
-                textShadow: `0 1px 4px ${CYBER.surface}88`
+                textShadow: `0 1px 4px ${GREEN_THEME.shadow}`
               }}
             >
               Campora
@@ -125,20 +127,20 @@ export default function Hero() {
               fontWeight: FONT.headerWeight,
               fontSize: 40,
               margin: 0,
-              color: CYBER.text,
+              color: GREEN_THEME.text,
               lineHeight: 1.1,
-              textShadow: `0 2px 8px ${CYBER.surface}55`
+              textShadow: `0 2px 8px ${GREEN_THEME.shadow}`
             }}
           >
             Terjun Lebih Siap,<br />
-            <span style={{ color: CYBER.accent, textShadow: `0 2px 8px ${CYBER.accent2}22` }}>
+            <span style={{ color: GREEN_THEME.accent, textShadow: `0 2px 8px ${GREEN_THEME.accent2}22` }}>
               Bersama Campora!
             </span>
           </h1>
           {/* Subheadline */}
           <p
             style={{
-              color: CYBER.textDim,
+              color: GREEN_THEME.textDim,
               fontSize: 20,
               margin: "18px 0 32px 0",
               fontWeight: FONT.bodyWeight,
@@ -151,7 +153,7 @@ export default function Hero() {
           <div style={{ display: "flex", gap: 16 }}>
             <button
               style={{
-                background: CYBER.accent,
+                background: GREEN_THEME.accent,
                 color: "#fff",
                 border: "none",
                 borderRadius: 8,
@@ -161,18 +163,18 @@ export default function Hero() {
                 cursor: "pointer",
                 letterSpacing: 1.2,
                 textTransform: "uppercase",
-                boxShadow: `0 2px 8px ${CYBER.accent}33`,
+                boxShadow: `0 2px 8px ${GREEN_THEME.shadow}`,
                 transition: "background 0.2s, color 0.2s",
-                outline: `1.5px solid ${CYBER.surface}`,
-                textShadow: `0 0 4px ${CYBER.accent}33`,
+                outline: `1.5px solid ${GREEN_THEME.border}`,
+                textShadow: `0 0 4px ${GREEN_THEME.shadow}`,
               }}
               onClick={() => navigate("/produk")}
               onMouseOver={e => {
-                e.currentTarget.style.background = CYBER.surface;
-                e.currentTarget.style.color = CYBER.accent;
+                e.currentTarget.style.background = GREEN_THEME.hover;
+                e.currentTarget.style.color = GREEN_THEME.accent;
               }}
               onMouseOut={e => {
-                e.currentTarget.style.background = CYBER.accent;
+                e.currentTarget.style.background = GREEN_THEME.accent;
                 e.currentTarget.style.color = "#fff";
               }}
             >
@@ -180,9 +182,9 @@ export default function Hero() {
             </button>
             <button
               style={{
-                background: CYBER.surface,
-                color: CYBER.text,
-                border: `2px solid ${CYBER.accent}`,
+                background: GREEN_THEME.surface,
+                color: GREEN_THEME.text,
+                border: `2px solid ${GREEN_THEME.accent}`,
                 borderRadius: 8,
                 padding: "12px 24px",
                 fontWeight: FONT.headerWeight,
@@ -190,16 +192,16 @@ export default function Hero() {
                 cursor: "pointer",
                 letterSpacing: 1.2,
                 textTransform: "uppercase",
-                boxShadow: `0 2px 8px ${CYBER.accent}22`,
+                boxShadow: `0 2px 8px ${GREEN_THEME.shadow}`,
                 transition: "background 0.2s, color 0.2s",
               }}
               onMouseOver={e => {
-                e.currentTarget.style.background = CYBER.accent;
+                e.currentTarget.style.background = GREEN_THEME.accent;
                 e.currentTarget.style.color = "#fff";
               }}
               onMouseOut={e => {
-                e.currentTarget.style.background = CYBER.surface;
-                e.currentTarget.style.color = CYBER.text;
+                e.currentTarget.style.background = GREEN_THEME.surface;
+                e.currentTarget.style.color = GREEN_THEME.text;
               }}
             >
               Pesan via WA
@@ -219,15 +221,15 @@ export default function Hero() {
             style={{
               width: 300,
               height: 300,
-              background: CYBER.surface,
+              background: GREEN_THEME.surface,
               borderRadius: 24,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: `0 4px 24px ${CYBER.accent}22`,
+              boxShadow: `0 4px 24px ${GREEN_THEME.shadow}`,
               position: "relative",
               overflow: "hidden",
-              border: `2px solid ${CYBER.accent2}44`,
+              border: `2px solid ${GREEN_THEME.accent2}44`,
             }}
           >
             {/* Ganti dengan gambar/ilustrasi asli */}
@@ -239,13 +241,13 @@ export default function Hero() {
                 height: "auto",
                 objectFit: "contain",
                 borderRadius: 18,
-                boxShadow: `0 2px 12px ${CYBER.accent2}33`,
+                boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`,
                 filter: "brightness(0.95) contrast(1.05)",
               }}
             />
-            {/* Cyber grid overlay */}
+            {/* Green grid overlay */}
             <svg width="100%" height="100%" style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }}>
-              <rect x="0" y="0" width="100%" height="100%" fill="none" stroke={CYBER.neon} strokeDasharray="8 8" strokeWidth="1" opacity="0.13" />
+              <rect x="0" y="0" width="100%" height="100%" fill="none" stroke={GREEN_THEME.neon} strokeDasharray="8 8" strokeWidth="1" opacity="0.13" />
             </svg>
           </div>
         </div>

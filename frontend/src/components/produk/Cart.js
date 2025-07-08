@@ -1,18 +1,20 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
 import { Button } from "react-bootstrap";
-import { FaTrash, FaPlus, FaMinus, FaShoppingCart, FaTimes, FaCheckCircle, FaCode } from "react-icons/fa";
+import { FaCheckCircle, FaCode, FaMinus, FaPlus, FaShoppingCart, FaTimes, FaTrash } from "react-icons/fa";
 
 // Style konsisten dengan CategProd.js
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 const FONT = {
   family: "'Fira Mono', 'JetBrains Mono', 'Roboto Mono', 'Consolas', monospace",
@@ -61,13 +63,13 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
       >
         <Button
           style={{
-            background: CYBER.accent,
+            background: GREEN_THEME.accent,
             color: "#fff",
             border: "none",
             borderRadius: "50%",
             width: 60,
             height: 60,
-            boxShadow: `0 4px 16px ${CYBER.accent2}33`,
+            boxShadow: `0 4px 16px ${GREEN_THEME.accent2}33`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -84,16 +86,16 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
                 position: "absolute",
                 top: 10,
                 right: 10,
-                background: CYBER.neon,
-                color: CYBER.bg,
+                background: GREEN_THEME.neon,
+                color: GREEN_THEME.bg,
                 borderRadius: "50%",
                 fontSize: 13,
                 fontWeight: FONT.headerWeight,
                 padding: "2px 7px",
                 minWidth: 22,
                 textAlign: "center",
-                border: `2px solid ${CYBER.surface}`,
-                boxShadow: `0 1px 4px ${CYBER.accent2}55`,
+                border: `2px solid ${GREEN_THEME.surface}`,
+                boxShadow: `0 1px 4px ${GREEN_THEME.accent2}55`,
               }}
             >
               {items.length}
@@ -111,11 +113,11 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
           height: "100vh",
           width: 370,
           maxWidth: "100vw",
-          background: CYBER.surface,
-          color: CYBER.text,
+          background: GREEN_THEME.surface,
+          color: GREEN_THEME.text,
           fontFamily: FONT.family,
-          borderLeft: `2px solid ${CYBER.accent2}22`,
-          boxShadow: open ? `-4px 0 32px ${CYBER.surface}88` : "none",
+          borderLeft: `2px solid ${GREEN_THEME.accent2}22`,
+          boxShadow: open ? `-4px 0 32px ${GREEN_THEME.surface}88` : "none",
           zIndex: 10000,
           transform: open ? "translateX(0)" : "translateX(110%)",
           transition: "transform 0.35s cubic-bezier(.77,0,.18,1)",
@@ -129,14 +131,14 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "22px 24px 10px 24px",
-          borderBottom: `2px solid ${CYBER.accent2}22`,
-          background: CYBER.surface,
+          borderBottom: `2px solid ${GREEN_THEME.accent2}22`,
+          background: GREEN_THEME.surface,
         }}>
           <h2 style={{
             fontWeight: FONT.headerWeight,
             fontSize: 22,
             margin: 0,
-            color: CYBER.text,
+            color: GREEN_THEME.text,
             letterSpacing: 1.1,
           }}>
             Keranjang Belanja
@@ -144,7 +146,7 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
           <Button
             variant="link"
             style={{
-              color: CYBER.textDim,
+              color: GREEN_THEME.textDim,
               fontSize: 22,
               border: "none",
               background: "none",
@@ -164,7 +166,7 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
           padding: "18px 24px 0 24px",
         }}>
           {items.length === 0 ? (
-            <div style={{ color: CYBER.textDim, textAlign: "center", margin: "48px 0" }}>
+            <div style={{ color: GREEN_THEME.textDim, textAlign: "center", margin: "48px 0" }}>
               Keranjang kosong.
             </div>
           ) : (
@@ -176,10 +178,10 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
                   alignItems: "center",
                   gap: 16,
                   marginBottom: 18,
-                  background: CYBER.bg,
+                  background: GREEN_THEME.bg,
                   borderRadius: 10,
                   padding: "10px 12px",
-                  boxShadow: `0 2px 8px ${CYBER.accent2}22`,
+                  boxShadow: `0 2px 8px ${GREEN_THEME.accent2}22`,
                 }}
               >
                 <img
@@ -190,15 +192,15 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
                     height: 54,
                     objectFit: "cover",
                     borderRadius: 8,
-                    border: `2px solid ${CYBER.surface}`,
-                    background: CYBER.surface,
+                    border: `2px solid ${GREEN_THEME.surface}`,
+                    background: GREEN_THEME.surface,
                   }}
                 />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: FONT.headerWeight, fontSize: 16, color: CYBER.text }}>
+                  <div style={{ fontWeight: FONT.headerWeight, fontSize: 16, color: GREEN_THEME.text }}>
                     {item.name}
                   </div>
-                  <div style={{ color: CYBER.textDim, fontSize: 14 }}>
+                  <div style={{ color: GREEN_THEME.textDim, fontSize: 14 }}>
                     Rp{item.price.toLocaleString("id-ID")}
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 6 }}>
@@ -206,9 +208,9 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
                       size="sm"
                       variant="dark"
                       style={{
-                        background: CYBER.surface,
-                        color: CYBER.accent,
-                        border: `1px solid ${CYBER.accent2}22`,
+                        background: GREEN_THEME.surface,
+                        color: GREEN_THEME.accent,
+                        border: `1px solid ${GREEN_THEME.accent2}22`,
                         borderRadius: 6,
                         padding: "2px 8px",
                         fontWeight: FONT.headerWeight,
@@ -218,16 +220,16 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
                     >
                       <FaMinus />
                     </Button>
-                    <span style={{ minWidth: 24, textAlign: "center", color: CYBER.text }}>
+                    <span style={{ minWidth: 24, textAlign: "center", color: GREEN_THEME.text }}>
                       {item.qty}
                     </span>
                     <Button
                       size="sm"
                       variant="dark"
                       style={{
-                        background: CYBER.surface,
-                        color: CYBER.accent,
-                        border: `1px solid ${CYBER.accent2}22`,
+                        background: GREEN_THEME.surface,
+                        color: GREEN_THEME.accent,
+                        border: `1px solid ${GREEN_THEME.accent2}22`,
                         borderRadius: 6,
                         padding: "2px 8px",
                         fontWeight: FONT.headerWeight,
@@ -242,7 +244,7 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
                   size="sm"
                   variant="danger"
                   style={{
-                    background: CYBER.accent,
+                    background: GREEN_THEME.accent,
                     color: "#fff",
                     border: "none",
                     borderRadius: 6,
@@ -259,16 +261,16 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
         </div>
         {/* Footer */}
         <div style={{
-          borderTop: `2px solid ${CYBER.accent2}22`,
+          borderTop: `2px solid ${GREEN_THEME.accent2}22`,
           padding: "16px 24px",
-          background: CYBER.surface,
+          background: GREEN_THEME.surface,
         }}>
           <div style={{
             display: "flex",
             justifyContent: "space-between",
             fontWeight: FONT.headerWeight,
             fontSize: 18,
-            color: CYBER.text,
+            color: GREEN_THEME.text,
             marginBottom: 10,
           }}>
             <span>Total</span>
@@ -276,26 +278,26 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
           </div>
           <Button
             style={{
-              background: CYBER.neon,
-              color: CYBER.bg,
+              background: GREEN_THEME.neon,
+              color: GREEN_THEME.bg,
               border: "none",
               borderRadius: 8,
               padding: "12px 28px",
               fontWeight: FONT.headerWeight,
               fontSize: 18,
               letterSpacing: 0.8,
-              boxShadow: `0 2px 8px ${CYBER.accent2}22`,
+              boxShadow: `0 2px 8px ${GREEN_THEME.accent2}22`,
               width: "100%",
               marginTop: 2,
               transition: "background 0.2s, color 0.2s",
             }}
             onMouseOver={e => {
-              e.currentTarget.style.background = CYBER.accent;
-              e.currentTarget.style.color = CYBER.text;
+              e.currentTarget.style.background = GREEN_THEME.accent;
+              e.currentTarget.style.color = GREEN_THEME.text;
             }}
             onMouseOut={e => {
-              e.currentTarget.style.background = CYBER.neon;
-              e.currentTarget.style.color = CYBER.bg;
+              e.currentTarget.style.background = GREEN_THEME.neon;
+              e.currentTarget.style.color = GREEN_THEME.bg;
             }}
             onClick={handleCheckout}
             disabled={items.length === 0}
@@ -333,21 +335,21 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
           }}
         >
           <div style={{
-            background: CYBER.surface,
+            background: GREEN_THEME.surface,
             borderRadius: 24,
             padding: "48px 36px",
-            boxShadow: `0 4px 32px ${CYBER.accent2}55`,
+            boxShadow: `0 4px 32px ${GREEN_THEME.accent2}55`,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             gap: 18,
-            border: `2px solid ${CYBER.accent2}44`,
+            border: `2px solid ${GREEN_THEME.accent2}44`,
             position: "relative"
           }}>
             {/* Animasi Informatika */}
             <div style={{
               fontSize: 64,
-              color: CYBER.neon,
+              color: GREEN_THEME.neon,
               marginBottom: 8,
               animation: "spin 1.2s cubic-bezier(.77,0,.18,1) infinite alternate"
             }}>
@@ -356,27 +358,27 @@ export default function Cart({ items, onQtyChange, onRemove, onCheckout }) {
             <div style={{
               fontWeight: FONT.headerWeight,
               fontSize: 28,
-              color: CYBER.accent2,
+              color: GREEN_THEME.accent2,
               textAlign: "center",
               marginBottom: 6,
               letterSpacing: 1.2,
-              textShadow: `0 2px 8px ${CYBER.accent2}33`
+              textShadow: `0 2px 8px ${GREEN_THEME.accent2}33`
             }}>
               Terima Kasih Sudah Order!
             </div>
             <div style={{
-              color: CYBER.text,
+              color: GREEN_THEME.text,
               fontSize: 18,
               textAlign: "center",
               marginBottom: 8,
               maxWidth: 320,
             }}>
               Pesananmu sedang diproses. <br />
-              <span style={{ color: CYBER.neon, fontWeight: 600 }}>Tetap semangat ngoding!</span>
+              <span style={{ color: GREEN_THEME.neon, fontWeight: 600 }}>Tetap semangat ngoding!</span>
             </div>
             <div style={{
               fontSize: 22,
-              color: CYBER.accent,
+              color: GREEN_THEME.accent,
               marginTop: 8,
               animation: "bounce 1.2s infinite alternate"
             }}>

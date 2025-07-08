@@ -1,15 +1,17 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { categories } from "../../data/categories";
 
-// Style konsisten dengan CategProd.js
-const CYBER = {
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  neon: "#00bfae",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
+// Style konsisten dengan tema hijau light mode
+const GREEN_THEME = {
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  neon: "#2ecc71",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 const FONT = {
   family: "'Fira Mono', 'JetBrains Mono', 'Roboto Mono', 'Consolas', monospace",
@@ -31,9 +33,9 @@ export default function ProdFilter({ selected, onChange }) {
         type="button"
         onClick={() => onChange("")}
         style={{
-          background: selected === "" ? CYBER.accent : CYBER.surface,
-          color: selected === "" ? "#fff" : CYBER.textDim,
-          border: `2px solid ${CYBER.accent2}22`,
+          background: selected === "" ? GREEN_THEME.accent : GREEN_THEME.surface,
+          color: selected === "" ? "#fff" : GREEN_THEME.textDim,
+          border: `2px solid ${GREEN_THEME.accent2}22`,
           borderRadius: 8,
           padding: "8px 20px",
           fontWeight: FONT.headerWeight,
@@ -41,16 +43,16 @@ export default function ProdFilter({ selected, onChange }) {
           fontSize: 16,
           letterSpacing: 0.7,
           cursor: "pointer",
-          boxShadow: selected === "" ? `0 2px 8px ${CYBER.accent2}22` : "none",
+          boxShadow: selected === "" ? `0 2px 8px ${GREEN_THEME.accent2}22` : "none",
           transition: "all 0.18s",
         }}
         onMouseOver={e => {
-          e.currentTarget.style.background = CYBER.neon;
-          e.currentTarget.style.color = CYBER.surface;
+          e.currentTarget.style.background = GREEN_THEME.neon;
+          e.currentTarget.style.color = GREEN_THEME.surface;
         }}
         onMouseOut={e => {
-          e.currentTarget.style.background = selected === "" ? CYBER.accent : CYBER.surface;
-          e.currentTarget.style.color = selected === "" ? "#fff" : CYBER.textDim;
+          e.currentTarget.style.background = selected === "" ? GREEN_THEME.accent : GREEN_THEME.surface;
+          e.currentTarget.style.color = selected === "" ? "#fff" : GREEN_THEME.textDim;
         }}
       >
         Semua
@@ -61,9 +63,9 @@ export default function ProdFilter({ selected, onChange }) {
           type="button"
           onClick={() => onChange(cat.id)}
           style={{
-            background: selected === cat.id ? CYBER.accent : CYBER.surface,
-            color: selected === cat.id ? "#fff" : CYBER.textDim,
-            border: `2px solid ${CYBER.accent2}22`,
+            background: selected === cat.id ? GREEN_THEME.accent : GREEN_THEME.surface,
+            color: selected === cat.id ? "#fff" : GREEN_THEME.textDim,
+            border: `2px solid ${GREEN_THEME.accent2}22`,
             borderRadius: 8,
             padding: "8px 20px",
             fontWeight: FONT.headerWeight,
@@ -71,16 +73,16 @@ export default function ProdFilter({ selected, onChange }) {
             fontSize: 16,
             letterSpacing: 0.7,
             cursor: "pointer",
-            boxShadow: selected === cat.id ? `0 2px 8px ${CYBER.accent2}22` : "none",
+            boxShadow: selected === cat.id ? `0 2px 8px ${GREEN_THEME.accent2}22` : "none",
             transition: "all 0.18s",
           }}
           onMouseOver={e => {
-            e.currentTarget.style.background = CYBER.neon;
-            e.currentTarget.style.color = CYBER.surface;
+            e.currentTarget.style.background = GREEN_THEME.neon;
+            e.currentTarget.style.color = GREEN_THEME.surface;
           }}
           onMouseOut={e => {
-            e.currentTarget.style.background = selected === cat.id ? CYBER.accent : CYBER.surface;
-            e.currentTarget.style.color = selected === cat.id ? "#fff" : CYBER.textDim;
+            e.currentTarget.style.background = selected === cat.id ? GREEN_THEME.accent : GREEN_THEME.surface;
+            e.currentTarget.style.color = selected === cat.id ? "#fff" : GREEN_THEME.textDim;
           }}
         >
           {cat.name}

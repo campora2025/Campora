@@ -1,4 +1,6 @@
 
+import { FONT, GREEN_THEME } from "../../utils/theme";
+
 export default function AboutHead() {
   return (
     <div style={{
@@ -7,17 +9,17 @@ export default function AboutHead() {
       marginBottom: 32,
     }}>
       <h2 style={{
-        color: "#FFC107",
-        fontWeight: 700,
+        color: GREEN_THEME.accent,
+        fontWeight: FONT.headerWeight,
         fontSize: 32,
         letterSpacing: 1.2,
         marginBottom: 10,
-        textShadow: "0 2px 8px #23242a55"
+        textShadow: `0 2px 8px ${GREEN_THEME.shadow}`
       }}>
         Tentang Campora
       </h2>
       <p style={{
-        color: "#B0B0B0",
+        color: GREEN_THEME.textDim,
         fontSize: 18,
         maxWidth: 600,
         margin: "0 auto"

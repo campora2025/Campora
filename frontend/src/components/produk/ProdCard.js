@@ -4,16 +4,18 @@ import { FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { categories } from "../../data/categories";
 
-// Style konsisten dengan CategProd.js
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+// Style konsisten dengan tema hijau light mode
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 const FONT = {
   family: "'Fira Mono', 'JetBrains Mono', 'Roboto Mono', 'Consolas', monospace",
@@ -33,11 +35,11 @@ export default function ProdCard({ product }) {
   return (
     <Card
       style={{
-        background: CYBER.surface,
-        color: CYBER.text,
-        border: `2px solid ${CYBER.accent2}22`,
+        background: GREEN_THEME.surface,
+        color: GREEN_THEME.text,
+        border: `2px solid ${GREEN_THEME.border}`,
         borderRadius: 18,
-        boxShadow: `0 2px 12px ${CYBER.accent}22`,
+        boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`,
         transition: "transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s, border 0.2s",
         cursor: "pointer",
         minWidth: 200,
@@ -49,26 +51,26 @@ export default function ProdCard({ product }) {
       className="prod-card"
       onMouseOver={e => {
         e.currentTarget.style.transform = "translateY(-8px) scale(1.04)";
-        e.currentTarget.style.boxShadow = `0 6px 24px ${CYBER.accent}44`;
-        e.currentTarget.style.border = `2px solid ${CYBER.neon}`;
+        e.currentTarget.style.boxShadow = `0 6px 24px ${GREEN_THEME.shadow}`;
+        e.currentTarget.style.border = `2px solid ${GREEN_THEME.neon}`;
       }}
       onMouseOut={e => {
         e.currentTarget.style.transform = "none";
-        e.currentTarget.style.boxShadow = `0 2px 12px ${CYBER.accent}22`;
-        e.currentTarget.style.border = `2px solid ${CYBER.accent2}22`;
+        e.currentTarget.style.boxShadow = `0 2px 12px ${GREEN_THEME.shadow}`;
+        e.currentTarget.style.border = `2px solid ${GREEN_THEME.border}`;
       }}
     >
       <div style={{
         width: "100%",
         height: 170,
-        background: CYBER.bg,
+        background: GREEN_THEME.hover,
         borderTopLeftRadius: 18,
         borderTopRightRadius: 18,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
-        borderBottom: `2px solid ${CYBER.surface}`,
+        borderBottom: `2px solid ${GREEN_THEME.border}`,
       }}>
         <img
           src={product.image}
@@ -82,8 +84,8 @@ export default function ProdCard({ product }) {
       </div>
       <Card.Body style={{ width: "100%", padding: 18, display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Badge bg="dark" style={{
-          background: CYBER.accent2,
-          color: CYBER.bg,
+          background: GREEN_THEME.accent2,
+          color: "#fff",
           fontWeight: FONT.headerWeight,
           fontSize: 13,
           marginBottom: 8,
@@ -96,15 +98,15 @@ export default function ProdCard({ product }) {
         <Card.Title style={{
           fontWeight: FONT.headerWeight,
           fontSize: 18,
-          color: CYBER.text,
+          color: GREEN_THEME.text,
           letterSpacing: 0.8,
-          textShadow: `0 1px 4px ${CYBER.surface}66`,
+          textShadow: `0 1px 4px ${GREEN_THEME.shadow}`,
           textAlign: "center",
         }}>
           {product.name}
         </Card.Title>
         <Card.Text style={{
-          color: CYBER.textDim,
+          color: GREEN_THEME.textDim,
           fontWeight: FONT.bodyWeight,
           fontSize: 15,
           textAlign: "center",
@@ -120,13 +122,13 @@ export default function ProdCard({ product }) {
             width: "100%",
             marginBottom: 12,
             padding: "8px 12px",
-            background: CYBER.bg,
+            background: GREEN_THEME.bg,
             borderRadius: 8,
-            border: `1px solid ${CYBER.accent2}33`
+            border: `1px solid ${GREEN_THEME.accent2}33`
           }}>
             <div style={{
               fontSize: 12,
-              color: CYBER.accent2,
+              color: GREEN_THEME.accent2,
               fontWeight: FONT.headerWeight,
               marginBottom: 4,
               textAlign: "center"
@@ -134,7 +136,7 @@ export default function ProdCard({ product }) {
               Termasuk:
             </div>
             <ul style={{
-              color: CYBER.textDim,
+              color: GREEN_THEME.textDim,
               fontSize: 12,
               margin: 0,
               paddingLeft: 16,
@@ -144,7 +146,7 @@ export default function ProdCard({ product }) {
                 <li key={idx} style={{ marginBottom: 2 }}>{item}</li>
               ))}
               {product.includes.length > 3 && (
-                <li style={{ color: CYBER.accent, fontStyle: "italic" }}>
+                <li style={{ color: GREEN_THEME.accent, fontStyle: "italic" }}>
                   +{product.includes.length - 3} lainnya
                 </li>
               )}
@@ -156,7 +158,7 @@ export default function ProdCard({ product }) {
         {(product.estimasiOngkir || product.estimasiHarga) && (
           <div style={{
             fontSize: 11,
-            color: CYBER.neon,
+            color: GREEN_THEME.neon,
             textAlign: "center",
             marginBottom: 8,
             fontStyle: "italic"
@@ -168,22 +170,22 @@ export default function ProdCard({ product }) {
         <div style={{
           fontWeight: FONT.headerWeight,
           fontSize: 17,
-          color: CYBER.accent,
+          color: GREEN_THEME.accent,
           margin: "8px 0 14px 0",
         }}>
           Rp{product.price.toLocaleString("id-ID")}
         </div>
         <Button
           style={{
-            background: CYBER.neon,
-            color: CYBER.bg,
+            background: GREEN_THEME.neon,
+            color: GREEN_THEME.bg,
             border: "none",
             borderRadius: 8,
             padding: "10px 22px",
             fontWeight: FONT.headerWeight,
             fontSize: 16,
             letterSpacing: 0.6,
-            boxShadow: `0 2px 8px ${CYBER.accent2}22`,
+            boxShadow: `0 2px 8px ${GREEN_THEME.accent2}22`,
             display: "flex",
             alignItems: "center",
             gap: 8,
@@ -191,12 +193,12 @@ export default function ProdCard({ product }) {
           }}
           onClick={() => navigate(`/produk/${product.id}`)}
           onMouseOver={e => {
-            e.currentTarget.style.background = CYBER.accent;
-            e.currentTarget.style.color = CYBER.text;
+            e.currentTarget.style.background = GREEN_THEME.accent;
+            e.currentTarget.style.color = GREEN_THEME.text;
           }}
           onMouseOut={e => {
-            e.currentTarget.style.background = CYBER.neon;
-            e.currentTarget.style.color = CYBER.bg;
+            e.currentTarget.style.background = GREEN_THEME.neon;
+            e.currentTarget.style.color = GREEN_THEME.bg;
           }}
         >
           <FaInfoCircle size={18} /> Detail Produk

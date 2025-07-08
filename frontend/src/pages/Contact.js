@@ -1,14 +1,14 @@
-import React from "react";
-import MainNavbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ContactHead from "../components/contact/ContactHead";
+import MainNavbar from "../components/Navbar";
 import ContactForm from "../components/contact/ContactForm";
+import ContactHead from "../components/contact/ContactHead";
 import ContactInfo from "../components/contact/ContactInfo";
 import ContactSosial from "../components/contact/ContactSosial";
+import { GREEN_THEME } from "../utils/theme";
 
 export default function Contact() {
   return (
-    <div style={{ background: "#181A20", minHeight: "100vh" }}>
+    <div style={{ background: GREEN_THEME.bg, minHeight: "100vh" }}>
       <MainNavbar />
       <div style={{
         maxWidth: 700,

@@ -5,6 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fffe;
+  color: #1a4d40;
+}
+
+/* Global CSS Variables untuk Tema Hijau Light Mode */
+:root {
+  --green-bg: #f8fffe;
+  --green-surface: #ffffff;
+  --green-primary: #16a085;
+  --green-secondary: #27ae60;
+  --green-accent: #2ecc71;
+  --green-text: #1a4d40;
+  --green-text-dim: #4a7068;
+  --green-border: #e8f6f3;
+  --green-hover: #d5f4ef;
+  --green-shadow: rgba(22, 160, 133, 0.1);
 }
 
 code {

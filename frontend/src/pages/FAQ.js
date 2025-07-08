@@ -2,15 +2,17 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import MainNavbar from "../components/Navbar";
 
-const CYBER = {
-  bg: "#181A20",
-  surface: "#23242a",
-  accent: "#FF5722",
-  accent2: "#FFC107",
-  text: "#E0E0E0",
-  textDim: "#B0B0B0",
-  neon: "#00bfae",
-  border: "#23242a",
+const GREEN_THEME = {
+  bg: "#f8fffe",
+  surface: "#ffffff",
+  accent: "#16a085",
+  accent2: "#27ae60",
+  text: "#1a4d40",
+  textDim: "#4a7068",
+  neon: "#2ecc71",
+  border: "#e8f6f3",
+  hover: "#d5f4ef",
+  shadow: "rgba(22, 160, 133, 0.1)",
 };
 
 const faqs = [
@@ -70,7 +72,7 @@ export default function FAQ() {
   };
 
   return (
-    <div style={{ background: CYBER.bg, minHeight: "100vh" }}>
+    <div style={{ background: GREEN_THEME.bg, minHeight: "100vh" }}>
       <MainNavbar />
       <div style={{
         maxWidth: 800,
@@ -84,17 +86,17 @@ export default function FAQ() {
           marginBottom: 32,
         }}>
           <h2 style={{
-            color: CYBER.accent2,
+            color: GREEN_THEME.accent2,
             fontWeight: 700,
             fontSize: 32,
             letterSpacing: 1.2,
             marginBottom: 10,
-            textShadow: "0 2px 8px #23242a55"
+            textShadow: `0 2px 8px ${GREEN_THEME.shadow}`
           }}>
             FAQ - Pertanyaan Umum
           </h2>
           <p style={{
-            color: CYBER.textDim,
+            color: GREEN_THEME.textDim,
             fontSize: 18,
             maxWidth: 600,
             margin: "0 auto"
@@ -107,11 +109,11 @@ export default function FAQ() {
         <div style={{ marginTop: 32 }}>
           {faqs.map((faq) => (
             <div key={faq.id} style={{
-              background: CYBER.surface,
+              background: GREEN_THEME.surface,
               borderRadius: 12,
               marginBottom: 16,
               overflow: "hidden",
-              boxShadow: "0 2px 12px #FFC10722"
+              boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`
             }}>
               <button
                 onClick={() => toggleItem(faq.id)}
@@ -119,7 +121,7 @@ export default function FAQ() {
                   width: "100%",
                   background: "transparent",
                   border: "none",
-                  color: CYBER.text,
+                  color: GREEN_THEME.text,
                   padding: "20px 24px",
                   textAlign: "left",
                   cursor: "pointer",
@@ -130,12 +132,12 @@ export default function FAQ() {
                   alignItems: "center",
                   transition: "background 0.2s"
                 }}
-                onMouseOver={e => e.currentTarget.style.background = CYBER.bg}
+                onMouseOver={e => e.currentTarget.style.background = GREEN_THEME.hover}
                 onMouseOut={e => e.currentTarget.style.background = "transparent"}
               >
                 <span>{faq.question}</span>
                 <span style={{
-                  color: CYBER.accent,
+                  color: GREEN_THEME.accent,
                   fontSize: 20,
                   transform: openItems.has(faq.id) ? "rotate(45deg)" : "rotate(0deg)",
                   transition: "transform 0.3s"
@@ -147,11 +149,11 @@ export default function FAQ() {
               {openItems.has(faq.id) && (
                 <div style={{
                   padding: "0 24px 20px 24px",
-                  color: CYBER.textDim,
+                  color: GREEN_THEME.textDim,
                   fontSize: 15,
                   lineHeight: 1.6,
-                  borderTop: `1px solid ${CYBER.bg}`,
-                  background: CYBER.bg
+                  borderTop: `1px solid ${GREEN_THEME.border}`,
+                  background: GREEN_THEME.hover
                 }}>
                   {faq.answer}
                 </div>
@@ -162,17 +164,17 @@ export default function FAQ() {
 
         {/* Contact Section */}
         <div style={{
-          background: CYBER.surface,
+          background: GREEN_THEME.surface,
           borderRadius: 14,
           padding: 28,
           margin: "32px auto 0 auto",
           textAlign: "center",
-          boxShadow: "0 2px 12px #FFC10722"
+          boxShadow: `0 2px 12px ${GREEN_THEME.shadow}`
         }}>
-          <h4 style={{ color: CYBER.accent, fontWeight: 700, marginBottom: 14 }}>
+          <h4 style={{ color: GREEN_THEME.accent, fontWeight: 700, marginBottom: 14 }}>
             Tidak Menemukan Jawaban?
           </h4>
-          <p style={{ fontSize: 16, color: CYBER.textDim, marginBottom: 20 }}>
+          <p style={{ fontSize: 16, color: GREEN_THEME.textDim, marginBottom: 20 }}>
             Tim customer service kami siap membantu Anda 24/7
           </p>
           <a
@@ -180,7 +182,7 @@ export default function FAQ() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: CYBER.accent,
+              background: GREEN_THEME.accent,
               color: "#fff",
               textDecoration: "none",
               padding: "12px 24px",
@@ -189,8 +191,8 @@ export default function FAQ() {
               display: "inline-block",
               transition: "background 0.2s"
             }}
-            onMouseOver={e => e.currentTarget.style.background = "#E64A19"}
-            onMouseOut={e => e.currentTarget.style.background = CYBER.accent}
+            onMouseOver={e => e.currentTarget.style.background = GREEN_THEME.accent2}
+            onMouseOut={e => e.currentTarget.style.background = GREEN_THEME.accent}
           >
             💬 Chat via WhatsApp
           </a>
